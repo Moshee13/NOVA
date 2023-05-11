@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <!-- <script defer src="source.js"></script> -->
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+    <title>NOVA דרישות צד מנהל</title>
+
+
+    <style>
+        h1 {
+            color: #333;
+            font-size: 32px;
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        thead {
+            background-color: #f2f2f2;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .container_button {
+            text-align: center;
+        }
+
+
+        @media screen and (max-width: 240px) {
+            button {
+                display: block;
+                margin: 5px auto;
+            }
+        }
+
+        .button_nova_add {
+            margin: 0 25px;
+            font-size: large;
+
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            background-color: blue;
+            color: white;
+
+        }
+
+        .button_nova_sent {
+            margin: 0 25px;
+            font-size: large;
+
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            background-color: blue;
+            color: white;
+
+        }
+
+        .button_nova_export,.excelFileInput,
+        .importButton {
+            margin: 0 25px;
+            font-size: large;
+
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            background-color: blue;
+            color: white;
+
+        }
+
+    </style>
+
+
+<body>
+    <h1>דרישות צד מנהל</h1>
+    <div class="container_button">
+
+        <button class="button_nova_add">הוסף שורה</button>
+        <button class="button_nova_sent">שלח</button>
+        <button class="button_nova_export">ייצא לאקסל</button>
+        <input type="file" class="excelFileInput" accept=".xlsx, .xls , .csv" />
+        <button class="importButton">ייבא מאקסל</button>
+
+    </div>
+    <br><br><br>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>מקט</th>
+                <th>תיאור</th>
+                <th>סריאלי</th>
+            </tr>
+        </thead>
+
+
+        <tbody class="inputContainer">
+            <tr>
+                <td><input type="number" name="admin_input_0" class="admin_input_0"></td>
+                <td><input type="text" name="admin_input_sku" class="admin_input_sku"></td>
+                <td><input type="text" name="admin_input_desc" class="admin_input_desc"></td>
+                <td><input type="text" name="user_input_serial"></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="admin_input_0" class="admin_input_0"></td>
+                <td><input type="text" name="admin_input_sku" class="admin_input_sku"></td>
+                <td><input type="text" name="admin_input_desc" class="admin_input_desc"></td>
+                <td><input type="text" name="user_input_serial"></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="admin_input_0" class="admin_input_0"></td>
+                <td><input type="text" name="admin_input_sku" class="admin_input_sku"></td>
+                <td><input type="text" name="admin_input_desc" class="admin_input_desc"></td>
+                <td><input type="text" name="user_input_serial"></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="admin_input_0" class="admin_input_0"></td>
+                <td><input type="text" name="admin_input_sku" class="admin_input_sku"></td>
+                <td><input type="text" name="admin_input_desc" class="admin_input_desc"></td>
+                <td><input type="text" name="user_input_serial"></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="admin_input_0" class="admin_input_0"></td>
+                <td><input type="text" name="admin_input_sku" class="admin_input_sku"></td>
+                <td><input type="text" name="admin_input_desc" class="admin_input_desc"></td>
+                <td><input type="text" name="user_input_serial"></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="admin_input_0" class="admin_input_0"></td>
+                <td><input type="text" name="admin_input_sku" class="admin_input_sku"></td>
+                <td><input type="text" name="admin_input_desc" class="admin_input_desc"></td>
+                <td><input type="text" name="user_input_serial"></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="admin_input_0" class="admin_input_0"></td>
+                <td><input type="text" name="admin_input_sku" class="admin_input_sku"></td>
+                <td><input type="text" name="admin_input_desc" class="admin_input_desc"></td>
+                <td><input type="text" name="user_input_serial"></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="admin_input_0" class="admin_input_0"></td>
+                <td><input type="text" name="admin_input_sku" class="admin_input_sku"></td>
+                <td><input type="text" name="admin_input_desc" class="admin_input_desc"></td>
+                <td><input type="text" name="user_input_serial"></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="admin_input_0" class="admin_input_0"></td>
+                <td><input type="text" name="admin_input_sku" class="admin_input_sku"></td>
+                <td><input type="text" name="admin_input_desc" class="admin_input_desc"></td>
+                <td><input type="text" name="user_input_serial"></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="admin_input_0" class="admin_input_0"></td>
+                <td><input type="text" name="admin_input_sku" class="admin_input_sku"></td>
+                <td><input type="text" name="admin_input_desc" class="admin_input_desc"></td>
+                <td><input type="text" name="user_input_serial"></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <script>
+        const button_nova_add = document.querySelector(".button_nova_add");
+        const inputContainer = document.querySelector(".inputContainer");
+        const button_nova_export = document.querySelector(".button_nova_export");
+        const button_nova_sent = document.querySelector(".button_nova_sent");
+        const admin_input_sku = document.querySelector(".admin_input_sku");
+        const admin_input_desc = document.querySelector(".admin_input_desc");
+
+        let inputCount = 10; // start with 1 input already on the page
+
+        // Add new input row when "הוסף שורה" button is clicked
+        button_nova_add.addEventListener("click", () => {
+            const newRow = `
+            <tr>
+              <td><input type="number" name="admin_input_${inputCount}"></td>
+              <td><input type="text" name="admin_input_sku"></td>
+              <td><input type="text" name="admin_input_desc"></td>
+              <td><input type="text" name="user_input_serial"></td>
+            </tr>
+          `;
+            inputContainer.insertAdjacentHTML("beforeend", newRow);
+            inputCount++;
+        });
+
+        // Export table data to CSV file when "ייצא לאקסל" button is clicked
+        button_nova_export.addEventListener("click", () => {
+            const rows = document.querySelectorAll("table tr");
+            let emailBody = "";
+            rows.forEach((row) => {
+                const rowData = [];
+                row.querySelectorAll("td input").forEach((input) => {
+                    rowData.push(input.value);
+                });
+                emailBody += rowData.join(",") + "\r\n";
+            });
+
+            const subject = "VMI"; // Set the email subject
+            const mailtoLink = `mailto:moshee13@gmail.com?subject=${encodeURIComponent(
+                subject
+            )}&body=דרישות מוכנות`;
+
+            // Open the default email client with the mailto link
+            window.location.href = mailtoLink;
+        });
+
+        button_nova_sent.addEventListener("click", () => {
+            admin_input_sku.readOnly = true;
+            admin_input_desc.readOnly = true;
+        });
+
+        document.querySelector(".importButton").addEventListener("click", function () {
+            var fileInput = document.querySelector(".excelFileInput");
+            var file = fileInput.files[0];
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                var data = new Uint8Array(e.target.result);
+                var workbook = XLSX.read(data, { type: "array" });
+
+                var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+                inputContainer.innerHTML = ""; // Clear existing input rows
+
+                var rowCount = jsonData.length;
+
+                for (var i = 1; i < rowCount; i++) {
+                    var admin_input_0 = jsonData[i][0]; // Assuming the first field is in the first column
+                    var admin_input_sku = jsonData[i][1]; // Assuming the second field is in the second column
+                    var admin_input_desc = jsonData[i][2]; // Assuming the third field is in the third column
+
+                    var newRow = `
+                <tr>
+                  <td><input type="number" name="admin_input_${i - 1}" value="${admin_input_0}"></td>
+                  <td><input type="text" name="admin_input_sku" value="${admin_input_sku}"></td>
+                  <td><input type="text" name="admin_input_desc" value
+            = "${admin_input_desc}"></td>
+            <td><input type="text" name="user_input_serial"></td>
+          </tr>
+        `;
+
+                    inputContainer.insertAdjacentHTML("beforeend", newRow);
+                }
+            };
+
+            reader.readAsArrayBuffer(file);
+        });
+
+        // Function to save input values to local storage
+        function saveInputValues() {
+            const inputElements = document.querySelectorAll('.inputContainer input');
+            inputElements.forEach((input, index) => {
+                localStorage.setItem(`input_${index}`, input.value);
+            });
+        }
+
+        // Event listener for the "שלח" button
+        document.querySelector('.button_nova_sent').addEventListener('click', saveInputValues);
+
+        // Event listener for the "ייבא מאקסל" button
+        document.querySelector('.importButton').addEventListener('click', () => {
+            // Add your import logic here
+            // This event listener is currently a placeholder
+            alert('אקסל עלה בהצלחה');
+        });
+    </script>
+
+ 
+</body>
